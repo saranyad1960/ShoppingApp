@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:kjshoppingapp/filter_page.dart';
 
 
 void main() {
@@ -28,32 +29,47 @@ class ExploreTab extends StatelessWidget {
         ),
         SizedBox(height: 10,),
         Padding(
-          padding: const EdgeInsets.all(10.0),
+          padding: const EdgeInsets.all(10),
           child: Container(
-            height: 60,
-            decoration: BoxDecoration(
-              color: Colors.grey[200],
-              borderRadius: BorderRadius.circular(20),
-            ),
-            child: Row(
-              children: [
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Icon(Icons.search,
-                    color: Colors.black,
-                    size: 30,
-                  ),
-                ),
-                Expanded(
-                  child: TextField(
-                    decoration: InputDecoration(
-                      hintText: 'Search',
-                      border: InputBorder.none,
+              height: 60,
+              decoration: BoxDecoration(
+                color: Colors.grey[200],
+                borderRadius: BorderRadius.circular(20),
+              ),
+              child: Row(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Icon(Icons.search,
+                      color: Colors.black,
+                      size: 30,
                     ),
                   ),
-                ),
-              ],
-            ),
+                  Expanded(
+                    child: TextField(
+                      decoration: InputDecoration(
+                        hintText: 'Search',
+                        border: InputBorder.none,
+                      ),
+                    ),
+                  ),
+                  GestureDetector(
+                    onTap: (){
+                      Navigator.pushReplacement(
+                        context,
+                        MaterialPageRoute(builder: (context) => FilterPage()),
+                      );
+                    },
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Icon(Icons.filter_list,
+                        color: Colors.black,
+                        size: 30,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
           ),
         ),
         SizedBox(height: 10,),

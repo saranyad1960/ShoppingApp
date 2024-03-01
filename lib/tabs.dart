@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/material/colors.dart';
+import 'package:kjshoppingapp/account_tab.dart';
 import 'package:kjshoppingapp/cart_tab.dart';
 import 'package:kjshoppingapp/explore_tab.dart';
 import 'package:kjshoppingapp/home_tab.dart';
@@ -46,7 +47,8 @@ class _HomePageState extends State<HomePage> {
       body: _selectedIndex == 0 ? HomeTab() :
       _selectedIndex == 1 ? ExploreTab() :
       _selectedIndex == 2 ? CartTab() :
-      _selectedIndex == 3 ? FavouriteTab() : SizedBox(),
+      _selectedIndex == 3 ? FavouriteTab() :
+      _selectedIndex == 4 ? AccountTab() : SizedBox(),
       bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
